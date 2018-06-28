@@ -31,10 +31,9 @@ namespace Cowsay
 
         private void Test()
         {
-            var messasge = "Hello World!";
-            _message.Text = messasge;
+            var messasge = _message.Text.Trim();
 
-            var cs = CowsayService.Default();
+            var cs = CowsayService.Default;
             var output = cs.Say(messasge);
             _output.Text = output;
             

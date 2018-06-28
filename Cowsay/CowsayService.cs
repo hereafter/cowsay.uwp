@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.ApplicationModel;
 
 namespace Cowsay
 {
@@ -46,20 +48,69 @@ namespace Cowsay
         public string Tongue { get; set; } = "  ";
         public int LineCharacterCapacity { get; set; } = 40;
 
-        public string Say(string message)
-        {   
+        public string Message { get; set; }
+
+
+        public string Say(string message=null)
+        {
+            if (message != null) this.Message = message;
+            message = this.Message;
+            var lines = this.GetMessageLines(message);
+
+
             return string.Empty;
         }
 
-        private int EstimateMaxLineLength(string message)
+        private string[] GetMessageLines(string message)
         {
-            return this.LineCharacterCapacity;
+            if (string.IsNullOrEmpty(message)) return new string[] { };
+
+            var list = new List<string>();
+            var lines = message.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
+
+            foreach(var l in lines)
+            {
+                var tmp = l;
+                while (tmp.Length > LineCharacterCapacity)
+                {
+                    list.Add(tmp.Substring(0, LineCharacterCapacity));
+                    tmp = tmp.Substring(LineCharacterCapacity);
+                }
+                list.Add(tmp);
+            }
+
+            return list.ToArray();
         }
 
-        private string CreateBalloon(string message)
+        private int GetMaxLineLength(string[] lines)
         {
+            return lines.Max(s => s.Length);
+        }
+
+        private string CreateBalloon(string[] lines)
+        {
+            var maxLineLength = this.GetMaxLineLength(lines);
+            var maxLineLength2 = maxLineLength + 2; //for border space fudge
+
+            var thoughts = "o";
+            
+
             return string.Empty;
         }
 
+
+        private async Task<string> LoadTemplateAsync(string fileName)
+        {
+            if(!fileName.EndsWith(".cow", StringComparison.OrdinalIgnoreCase))
+            {
+                fileName += ".cow";
+            }
+
+            var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                "Assets\\cows", fileName);
+
+            return await File.ReadAllTextAsync(filePath);
+
+        }
     }
 }
