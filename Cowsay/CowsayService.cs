@@ -26,7 +26,6 @@ namespace Cowsay
         public const string Stoned = "U ";
     }
 
-
     public class CowsayService
     {
         public static CowsayService Default { get; set; }
@@ -44,12 +43,9 @@ namespace Cowsay
         public string Eyes { get; set; } = "oo";
         public string FileName { get; set; } = "default.cow";
         public string Tongue { get; set; } = "  ";
-
         public string Thoughts { get; set; } = "\\";
         public int LineCharacterCapacity { get; set; } = 40;
-
         public string Message { get; set; }
-
 
         public async Task<string> SayAsync(string message=null)
         {

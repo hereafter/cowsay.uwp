@@ -10,7 +10,6 @@ namespace Cowsay
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("cowsays:");
             global::Windows.UI.Xaml.Application.Start((p) => new App());
         }
     }

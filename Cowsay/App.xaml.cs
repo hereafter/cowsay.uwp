@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -32,6 +33,26 @@ namespace Cowsay
             this.Suspending += OnSuspending;
         }
 
+        protected override void OnActivated(IActivatedEventArgs args)
+        {
+            Trace.WriteLine("OnActivated");
+            switch (args.Kind)
+            {
+                case ActivationKind.CommandLineLaunch:
+                    Trace.WriteLine("ActivationKind.CommandLineLaunch");
+
+                    Frame rootFrame = this.CreateRootFrame();
+                    if (rootFrame.Content == null)
+                    {
+                        rootFrame.Navigate(typeof(MainPage), null);
+                    }
+                    // Ensure the current window is active
+                    Window.Current.Activate();
+                    break;
+            }
+            
+
+        }
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.
@@ -39,25 +60,7 @@ namespace Cowsay
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            Frame rootFrame = Window.Current.Content as Frame;
-
-            // Do not repeat app initialization when the Window already has content,
-            // just ensure that the window is active
-            if (rootFrame == null)
-            {
-                // Create a Frame to act as the navigation context and navigate to the first page
-                rootFrame = new Frame();
-
-                rootFrame.NavigationFailed += OnNavigationFailed;
-
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-                {
-                    //TODO: Load state from previously suspended application
-                }
-
-                // Place the frame in the current Window
-                Window.Current.Content = rootFrame;
-            }
+            Frame rootFrame = this.CreateRootFrame();
 
             if (e.PrelaunchActivated == false)
             {
@@ -95,6 +98,20 @@ namespace Cowsay
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        private Frame CreateRootFrame()
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            if (rootFrame == null)
+            {
+                // Create a Frame to act as the navigation context and navigate to the first page
+                rootFrame = new Frame();
+                rootFrame.NavigationFailed += OnNavigationFailed;
+                // Place the frame in the current Window
+                Window.Current.Content = rootFrame;
+            }
+            return rootFrame;
         }
     }
 }
