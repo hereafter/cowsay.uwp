@@ -29,19 +29,35 @@ namespace Cowsay
     {
         public static CowsayService Default { get; set; }
 
-
         static CowsayService()
         {
-            Default = new CowsayService();
+            var args=Environment.GetCommandLineArgs();
+            Default = new CowsayService(args);
         }
+
+        public CowsayService(string[] args=null)
+        {
+            
+        }
+
 
         public string Eyes { get; set; } = "oo";
         public string FileName { get; set; } = "default.cow";
         public string Tongue { get; set; } = "  ";
-        public int LineCharactersCount { get; set; } = 40;
+        public int LineCharacterCapacity { get; set; } = 40;
 
         public string Say(string message)
         {   
+            return string.Empty;
+        }
+
+        private int EstimateMaxLineLength(string message)
+        {
+            return this.LineCharacterCapacity;
+        }
+
+        private string CreateBalloon(string message)
+        {
             return string.Empty;
         }
 

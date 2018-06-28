@@ -34,7 +34,7 @@ namespace Cowsay
             var messasge = "Hello World!";
             _message.Text = messasge;
 
-            var cs = new CowsayService();
+            var cs = CowsayService.Default();
             var output = cs.Say(messasge);
             _output.Text = output;
             
