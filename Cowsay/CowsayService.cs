@@ -108,11 +108,12 @@ namespace Cowsay
                 ">",    //6
             };
 
-            Action fillBorder = ()=>{
+            void fillBorder()
+            {
                 sb.Append(specials[0]);
                 for (int i = 0; i < maxLineLength2; i++) sb.Append(specials[1]);
                 sb.AppendLine(specials[0]);
-            };
+            }
 
 
             fillBorder();
