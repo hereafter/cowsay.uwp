@@ -6,12 +6,27 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}">
     <Grid>
-        <StackPanel Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Margin="20" MaxWidth="800">
             <TextBox x:Name="_message" Header="Your message:" TextWrapping="Wrap" 
-                     MinHeight="100" AcceptsReturn="True" Text="Hello World!"/>
-            <TextBlock x:Name="_output" FontFamily="Consolas"/>
+                     MinHeight="100"  MaxHeight="300" AcceptsReturn="True" Text="Hello World!"/>
+            <TextBlock Margin="0, 10">Cow says:</TextBlock>
+            <Border Background="{ThemeResource SystemControlAccentDark2AcrylicWindowAccentDark2MediumHighBrush}"
+                    Padding="10">
+                <TextBlock x:Name="_output" FontFamily="Consolas" FontSize="12"
+                       />
+            </Border>
         </StackPanel>
+
+        <CommandBar Grid.Row="1">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:Uid="MainPageAppBarButtonCopy" Label="Copy" Icon="Copy" />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
     </Grid>
 </Page>

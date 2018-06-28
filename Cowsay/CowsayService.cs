@@ -58,10 +58,12 @@ namespace Cowsay
             if (message != null) this.Message = message;
             message = this.Message;
             var lines = this.GetMessageLines(message);
+            var text = string.Empty;
 
+            text += this.CreateBalloon(lines);
 
             var template = await this.LoadTemplateAsync(this.FileName);
-            var text = this.FillTemplate(template);
+            text += this.FillTemplate(template);
             return text;
         }
 
