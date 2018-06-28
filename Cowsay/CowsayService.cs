@@ -38,10 +38,8 @@ namespace Cowsay
         }
 
         public CowsayService(string[] args=null)
-        {
-            
+        {    
         }
-
 
         public string Eyes { get; set; } = "oo";
         public string FileName { get; set; } = "default.cow";
@@ -67,7 +65,10 @@ namespace Cowsay
             return text;
         }
 
-       
+        private int GetMaxLineLength(string[] lines)
+        {
+            return lines.Max(s => s.Length);
+        }
 
         private string[] GetMessageLines(string message)
         {
@@ -90,20 +91,87 @@ namespace Cowsay
             return list.ToArray();
         }
 
-        private int GetMaxLineLength(string[] lines)
-        {
-            return lines.Max(s => s.Length);
-        }
-
+        
         private string CreateBalloon(string[] lines)
         {
+            var sb = new StringBuilder();
             var maxLineLength = this.GetMaxLineLength(lines);
-            var maxLineLength2 = maxLineLength + 2; //for border space fudge
+            var maxLineLength2 = maxLineLength+2;
 
-            var thoughts = "o";
-            
+            var specials = new string[] {
+                " ",    //0
+                "-",    //1
+                "/",    //2
+                "\\",   //3
+                "|",    //4
+                "<",    //5
+                ">",    //6
+            };
 
-            return string.Empty;
+            Action fillBorder = ()=>{
+                sb.Append(specials[0]);
+                for (int i = 0; i < maxLineLength2; i++) sb.Append(specials[1]);
+                sb.AppendLine(specials[0]);
+            };
+
+
+            fillBorder();
+            var size = lines.Length;
+
+            for (int i = 0; i < size; i++)
+            {
+                if (size < 2)
+                {
+                    sb.Append(specials[5]);
+                }
+                else
+                {
+                    if (i == 0)
+                    {
+                        sb.Append(specials[2]);
+                    }
+                    else if (i == lines.Length - 1)
+                    {
+                        sb.Append(specials[3]);
+                    }
+                    else
+                    {
+                        sb.Append(specials[4]);
+                    }
+                }
+                sb.Append(specials[0]);
+                var line = lines[i];
+                sb.Append(line);
+
+                var padding = maxLineLength - line.Length;
+                for(int t=0; t<padding; t++) sb.Append(specials[0]);
+
+                sb.Append(specials[0]);
+                if (size < 2)
+                {
+                    sb.Append(specials[6]);
+                }
+                else
+                {
+                    if (i == 0)
+                    {
+                        sb.Append(specials[3]);
+                    }
+                    else if (i == lines.Length - 1)
+                    {
+                        sb.Append(specials[2]);
+                    }
+                    else
+                    {
+                        sb.Append(specials[4]);
+                    }
+                    
+                }
+                sb.AppendLine();
+            }
+
+            fillBorder();
+            return sb.ToString();
         }
 
 
@@ -118,8 +186,16 @@ namespace Cowsay
                 "Assets\\cows", fileName);
 
             var template=await File.ReadAllTextAsync(filePath);
-            var index = template.IndexOf('\n');
-            if(index>=0) template = template.Substring(index+1);
+
+            var tag = "$the_cow";
+            var index = template.IndexOf(tag);
+            if(index>=0)
+            {
+                tag = "\n";
+                index = template.IndexOf(tag, index);
+                if (index >= 0) template = template.Substring(index+tag.Length);
+            }
+            
             index=template.LastIndexOf("EOC");
             if (index >= 0) template = template.Substring(0, index);
 

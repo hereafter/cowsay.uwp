@@ -18,8 +18,7 @@
             <TextBlock Margin="0, 10">Cow says:</TextBlock>
             <Border Background="{ThemeResource SystemControlAccentDark2AcrylicWindowAccentDark2MediumHighBrush}"
                     Padding="10">
-                <TextBlock x:Name="_output" FontFamily="Consolas" FontSize="12"
-                       />
+                <TextBlock x:Name="_output" FontFamily="Consolas" FontSize="12"/>
             </Border>
         </StackPanel>
 

@@ -26,10 +26,10 @@ namespace Cowsay
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            this.Test();
+            this.Cowsay();
         }
 
-        private async void Test()
+        private async void Cowsay()
         {
             var messasge = _message.Text.Trim();
             var cs = CowsayService.Default;
