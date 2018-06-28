@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CowsayService.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -104,6 +105,150 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="..\cowsay.perl\cows\beavis.zen.cow">
+      <Link>Assets\cows\beavis.zen.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\bong.cow">
+      <Link>Assets\cows\bong.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\bud-frogs.cow">
+      <Link>Assets\cows\bud-frogs.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\bunny.cow">
+      <Link>Assets\cows\bunny.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\cheese.cow">
+      <Link>Assets\cows\cheese.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\cower.cow">
+      <Link>Assets\cows\cower.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\daemon.cow">
+      <Link>Assets\cows\daemon.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\default.cow">
+      <Link>Assets\cows\default.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\dragon-and-cow.cow">
+      <Link>Assets\cows\dragon-and-cow.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\dragon.cow">
+      <Link>Assets\cows\dragon.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\elephant-in-snake.cow">
+      <Link>Assets\cows\elephant-in-snake.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\elephant.cow">
+      <Link>Assets\cows\elephant.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\eyes.cow">
+      <Link>Assets\cows\eyes.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\flaming-sheep.cow">
+      <Link>Assets\cows\flaming-sheep.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\ghostbusters.cow">
+      <Link>Assets\cows\ghostbusters.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\head-in.cow">
+      <Link>Assets\cows\head-in.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\hellokitty.cow">
+      <Link>Assets\cows\hellokitty.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\kiss.cow">
+      <Link>Assets\cows\kiss.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\kitty.cow">
+      <Link>Assets\cows\kitty.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\koala.cow">
+      <Link>Assets\cows\koala.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\kosh.cow">
+      <Link>Assets\cows\kosh.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\luke-koala.cow">
+      <Link>Assets\cows\luke-koala.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\mech-and-cow">
+      <Link>Assets\cows\mech-and-cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\meow.cow">
+      <Link>Assets\cows\meow.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\milk.cow">
+      <Link>Assets\cows\milk.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\moofasa.cow">
+      <Link>Assets\cows\moofasa.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\moose.cow">
+      <Link>Assets\cows\moose.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\mutilated.cow">
+      <Link>Assets\cows\mutilated.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\ren.cow">
+      <Link>Assets\cows\ren.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\satanic.cow">
+      <Link>Assets\cows\satanic.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\sheep.cow">
+      <Link>Assets\cows\sheep.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\skeleton.cow">
+      <Link>Assets\cows\skeleton.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\small.cow">
+      <Link>Assets\cows\small.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\sodomized.cow">
+      <Link>Assets\cows\sodomized.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\squirrel.cow">
+      <Link>Assets\cows\squirrel.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\stegosaurus.cow">
+      <Link>Assets\cows\stegosaurus.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\stimpy.cow">
+      <Link>Assets\cows\stimpy.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\supermilker.cow">
+      <Link>Assets\cows\supermilker.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\surgery.cow">
+      <Link>Assets\cows\surgery.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\telebears.cow">
+      <Link>Assets\cows\telebears.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\three-eyes.cow">
+      <Link>Assets\cows\three-eyes.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\turkey.cow">
+      <Link>Assets\cows\turkey.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\turtle.cow">
+      <Link>Assets\cows\turtle.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\tux.cow">
+      <Link>Assets\cows\tux.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\udder.cow">
+      <Link>Assets\cows\udder.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\vader-koala.cow">
+      <Link>Assets\cows\vader-koala.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\vader.cow">
+      <Link>Assets\cows\vader.cow</Link>
+    </Content>
+    <Content Include="..\cowsay.perl\cows\www.cow">
+      <Link>Assets\cows\www.cow</Link>
+    </Content>
     <None Include="Cowsay_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
