@@ -46,20 +46,26 @@ namespace Cowsay
         public string Eyes { get; set; } = "oo";
         public string FileName { get; set; } = "default.cow";
         public string Tongue { get; set; } = "  ";
+
+        public string Thoughts { get; set; } = "\\";
         public int LineCharacterCapacity { get; set; } = 40;
 
         public string Message { get; set; }
 
 
-        public string Say(string message=null)
+        public async Task<string> SayAsync(string message=null)
         {
             if (message != null) this.Message = message;
             message = this.Message;
             var lines = this.GetMessageLines(message);
 
 
-            return string.Empty;
+            var template = await this.LoadTemplateAsync(this.FileName);
+            var text = this.FillTemplate(template);
+            return text;
         }
+
+       
 
         private string[] GetMessageLines(string message)
         {
@@ -109,8 +115,21 @@ namespace Cowsay
             var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                 "Assets\\cows", fileName);
 
-            return await File.ReadAllTextAsync(filePath);
+            var template=await File.ReadAllTextAsync(filePath);
+            var index = template.IndexOf('\n');
+            if(index>=0) template = template.Substring(index+1);
+            index=template.LastIndexOf("EOC");
+            if (index >= 0) template = template.Substring(0, index);
 
+            return template;
+        }
+
+        private string FillTemplate(string template)
+        {
+            template = template.Replace("$eyes", this.Eyes);
+            template = template.Replace("$tongue", this.Tongue);
+            template = template.Replace("$thoughts", this.Thoughts);
+            return template;
         }
     }
 }

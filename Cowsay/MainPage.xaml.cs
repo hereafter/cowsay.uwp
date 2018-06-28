@@ -29,12 +29,11 @@ namespace Cowsay
             this.Test();
         }
 
-        private void Test()
+        private async void Test()
         {
             var messasge = _message.Text.Trim();
-
             var cs = CowsayService.Default;
-            var output = cs.Say(messasge);
+            var output = await cs.SayAsync(messasge);
             _output.Text = output;
             
         }

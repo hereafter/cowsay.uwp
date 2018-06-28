@@ -11,7 +11,7 @@
         <StackPanel Margin="20">
             <TextBox x:Name="_message" Header="Your message:" TextWrapping="Wrap" 
                      MinHeight="100" AcceptsReturn="True" Text="Hello World!"/>
-            <TextBlock x:Name="_output" />
+            <TextBlock x:Name="_output" FontFamily="Consolas"/>
         </StackPanel>
     </Grid>
 </Page>
