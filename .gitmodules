@@ -1,0 +1,3 @@
+[submodule "cowsay.perl"]
+	path = cowsay.perl
+	url = https://github.com/schacon/cowsay
