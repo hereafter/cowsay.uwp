@@ -254,13 +254,52 @@
     <None Include="Cowsay_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\Logo\LargeTile.scale-100.png" />
+    <Content Include="Assets\Images\Logo\LargeTile.scale-125.png" />
+    <Content Include="Assets\Images\Logo\LargeTile.scale-150.png" />
+    <Content Include="Assets\Images\Logo\LargeTile.scale-200.png" />
+    <Content Include="Assets\Images\Logo\LargeTile.scale-400.png" />
+    <Content Include="Assets\Images\Logo\SmallTile.scale-100.png" />
+    <Content Include="Assets\Images\Logo\SmallTile.scale-125.png" />
+    <Content Include="Assets\Images\Logo\SmallTile.scale-150.png" />
+    <Content Include="Assets\Images\Logo\SmallTile.scale-200.png" />
+    <Content Include="Assets\Images\Logo\SmallTile.scale-400.png" />
+    <Content Include="Assets\Images\Logo\SplashScreen.scale-100.png" />
+    <Content Include="Assets\Images\Logo\SplashScreen.scale-125.png" />
+    <Content Include="Assets\Images\Logo\SplashScreen.scale-150.png" />
+    <Content Include="Assets\Images\Logo\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Images\Logo\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Images\Logo\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Images\Logo\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Images\Logo\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Images\Logo\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Images\Logo\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Images\Logo\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Images\Logo\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Images\Logo\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Images\Logo\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Images\Logo\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Images\Logo\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Images\Logo\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Images\Logo\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Images\Logo\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Images\Logo\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Images\Logo\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\Images\Logo\StoreLogo.scale-100.png" />
+    <Content Include="Assets\Images\Logo\StoreLogo.scale-125.png" />
+    <Content Include="Assets\Images\Logo\StoreLogo.scale-150.png" />
+    <Content Include="Assets\Images\Logo\StoreLogo.scale-200.png" />
+    <Content Include="Assets\Images\Logo\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Images\Logo\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Images\Logo\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Images\Logo\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Images\Logo\Wide310x150Logo.scale-400.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\Images\Logo\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\Images\Logo\SplashScreen.scale-200.png" />
     <Content Include="Assets\Images\Logo\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Images\Logo\Square44x44Logo.scale-200.png" />
     <Content Include="Assets\Images\Logo\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Assets\Images\Logo\StoreLogo.png" />
     <Content Include="Assets\Images\Logo\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>

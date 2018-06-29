@@ -71,7 +71,7 @@ namespace Cowsay
             if (string.IsNullOrEmpty(message)) return new string[] { };
 
             var list = new List<string>();
-            var lines = message.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
+            var lines = message.Split(new string[] { "\r\n", "\n", "\r" }, StringSplitOptions.None);
 
             foreach(var l in lines)
             {
