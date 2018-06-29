@@ -68,7 +68,7 @@ namespace Cowsay
 
         private string[] GetMessageLines(string message)
         {
-            if (string.IsNullOrEmpty(message)) return new string[] { };
+            if (string.IsNullOrEmpty(message)) return new string[] {string.Empty };
 
             var list = new List<string>();
             var lines = message.Split(new string[] { "\r\n", "\n", "\r" }, StringSplitOptions.None);
@@ -78,10 +78,10 @@ namespace Cowsay
                 var tmp = l;
                 while (tmp.Length > LineCharacterCapacity)
                 {
-                    list.Add(tmp.Substring(0, LineCharacterCapacity));
+                    list.Add(tmp.Substring(0, LineCharacterCapacity).TrimStart());
                     tmp = tmp.Substring(LineCharacterCapacity);
                 }
-                list.Add(tmp);
+                list.Add(tmp.TrimStart());
             }
 
             return list.ToArray();

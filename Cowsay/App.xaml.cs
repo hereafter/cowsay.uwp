@@ -33,6 +33,26 @@ namespace Cowsay
             this.Suspending += OnSuspending;
         }
 
+        protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
+        {
+            base.OnBackgroundActivated(args);
+        }
+
+        protected override void OnFileActivated(FileActivatedEventArgs args)
+        {
+            base.OnFileActivated(args);
+        }
+
+        protected override void OnSearchActivated(SearchActivatedEventArgs args)
+        {
+            base.OnSearchActivated(args);
+        }
+
+        protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
+        {
+            base.OnShareTargetActivated(args);
+        }
+
         protected override void OnActivated(IActivatedEventArgs args)
         {
             Trace.WriteLine("OnActivated");
